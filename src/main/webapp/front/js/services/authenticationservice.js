@@ -16,8 +16,8 @@
         return service;
 
         function Login(username, password, callback) {
-            $http.post('/api/authenticate', { username: username, password: password })
-               .success(function (response) {
+            $http.post('http://localhost:8080/socialmedia-0.0.1-SNAPSHOT/api/users/:username/:password', { username: username, password: password })
+               .then(function (response) {
                    callback(response);
                });
 

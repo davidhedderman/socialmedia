@@ -10,27 +10,46 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id") private int id;
-    @Column(name = "username") private String username;
-    @Column(name = "password") private String password;
+    @Column(name = "id") private Integer user_id;
+    @Column(name = "firstname") private String firstname;
+    @Column(name = "lastname") private String lastname;
+    @Column(name= "username") private String username;
+    @Column(name= "password") private String password;
 
 
     public User() {
 
     }
 
-    public User(String username, String password, String libraryPersistentID) {
+    public User(String firstname, String lastname, String username, String password) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.username = username;
         this.password = password;
-
     }
 
-    public int getId() {
-        return id;
+    public Integer getUser_id() {
+        return user_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getUsername() {
